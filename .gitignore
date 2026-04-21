@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 data/
+outputs/*.pt
+app/static/uploads/
+.pytest_cache/
+.DS_Store
