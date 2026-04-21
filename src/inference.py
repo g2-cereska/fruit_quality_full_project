@@ -39,9 +39,10 @@ class Predictor:
             for index in ranking
         ]
         best_label = top_predictions[0]["label"]
-        parts = best_label.split("_")
-        produce_name = "_".join(parts[:-1])
-        condition = parts[-1]
+        if "__" in best_label:
+            produce_name, condition = best_label.rsplit("__", 1)
+        else:
+            produce_name, condition = best_label.rsplit("_", 1)
         return {
             "best_label": best_label,
             "produce_name": produce_name,

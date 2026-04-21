@@ -62,6 +62,38 @@ docker build -t fruit-quality-service .
 docker run -p 5000:5000 -e MODEL_PATH=/app/outputs/best_model.pt fruit-quality-service
 ```
 
+## Testing
+
+Automated tests are included to verify the correctness and reliability of the system components.
+
+### Test Coverage
+
+The test suite covers:
+
+- **Inference pipeline**
+  - Ensures predictions return the correct structure
+  - Verifies label parsing into `produce_name` and `condition`
+  - Checks handling of invalid inputs
+
+- **Flask application**
+  - Tests key endpoints such as `/health`
+  - Verifies correct response behaviour
+
+- **Project structure**
+  - Confirms required files and directories are present
+
+### Running the Tests
+
+To run all tests, activate the virtual environment and execute:
+
+```bash
+python -m pytest
+```
+
+You should see output similar to:
+
+![Test Results](images/testing.png)
+
 ## Common training errors and fixes
 ### 1. Dataset folder not found
 Use the folder that contains the 28 class folders, not the parent Kaggle download directory.
