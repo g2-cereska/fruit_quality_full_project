@@ -1,6 +1,6 @@
 # Fruit and Vegetable Quality Classification Service
 
-This project implements a 28-class computer vision system for the Bristol Regional Food Network use case. It classifies a produce image into one of 28 labels such as `Apple__Healthy` or `Tomato__Rotten`, then exposes the result through a small Flask service that can be integrated into a wider Django or microservice-based marketplace.
+This project implements a 28-class computer vision system for the Bristol Regional Food Network use case. It classifies a produce image into one of 28 labels such as `Apple__Fresh` or `Tomato__Rotten`, then exposes the result through a small Flask service that can be integrated into a wider Django or microservice-based marketplace.
 
 ## Why this fits the assignment
 - Producers need automated quality assessment for fruits and vegetables.
@@ -21,9 +21,9 @@ Download the Kaggle dataset and point the training script to the folder that dir
 
 ```text
 Fruit And Vegetable Diseases Dataset/
-├── Apple__Healthy/
+├── Apple__Fresh/
 ├── Apple__Rotten/
-├── Banana__Healthy/
+├── Banana__Fresh/
 ├── Banana__Rotten/
 ├── ...
 └── Tomato__Rotten/

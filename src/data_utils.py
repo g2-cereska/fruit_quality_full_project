@@ -76,7 +76,7 @@ def validate_dataset_structure(dataset_root: str | Path) -> DatasetSummary:
 
     if not class_names:
         raise ValueError(
-            "No class folders were found. Expected 28 folders such as Apple__Healthy and Apple__Rotten."
+            "No class folders were found. Expected 28 folders such as Apple__Fresh and Apple__Rotten."
         )
 
     return DatasetSummary(
