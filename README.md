@@ -29,6 +29,8 @@ Fruit And Vegetable Diseases Dataset/
 └── Tomato__Rotten/
 ```
 
+> Note: The dataset is not included in this repository because of file size. Download it separately and place it in the expected folder structure before training.
+
 ## Installation
 ```bash
 python -m venv .venv
@@ -48,6 +50,16 @@ Artifacts produced after training:
 - `outputs/confusion_matrix.png`
 - `outputs/classification_report.csv`
 - `outputs/metrics.json`
+
+## Results Summary
+
+The final recorded model achieved:
+
+- Test accuracy: **97.02%**
+- Test loss: **0.0896**
+- Best validation accuracy: **97.29%**
+
+These results indicate strong performance on the structured dataset used for training and evaluation. Real-world testing, however, showed reduced robustness on images with multiple objects, unusual backgrounds, or strong distribution shift.
 
 ## Run the web app
 ```bash
@@ -93,6 +105,17 @@ python -m pytest
 You should see output similar to:
 
 ![Test Results](images/testing.png)
+
+## Limitations
+
+Although the model performs strongly on the curated dataset, several limitations remain:
+
+- It assumes a **single dominant object** per image
+- It can misclassify visually similar decayed produce
+- Performance drops on **real-world images** with cluttered backgrounds or multiple items
+- Confidence scores are helpful for users, but they are **not calibrated uncertainty estimates**
+
+For this reason, the system should be treated as a decision-support tool rather than a fully autonomous quality-assessment system.
 
 ## Common training errors and fixes
 ### 1. Dataset folder not found
